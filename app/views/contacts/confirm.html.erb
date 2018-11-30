@@ -1,19 +1,19 @@
 <h3>内容確認</h3>
 
 <%= form_with(model: @contact, url: contacts_path, local: true) do |form| %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :email %>
+  <!-- <%= form.hidden_field :name %> -->
+  <!-- <%= form.hidden_field :email %> -->
   <%= form.hidden_field :content %>
 
-  <p>Name:<%= @contact.name %></p>
-  <p>Email:<%= @contact.email %></p>
+  <!-- <p>Name:<%= @contact.name %></p> -->
+  <!-- <p>Email:<%= @contact.email %></p> -->
   <p>Content:<%= @contact.content %></p>
   <%= form.submit  "登録する" %>
 <% end %>
 
 <%= form_with(model: @contact, url: new_contact_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :name %>
-  <%= form.hidden_field :email %>
+  <!-- <%= form.hidden_field :name %> -->
+  <!-- <%= form.hidden_field :email %> -->
   <%= form.hidden_field :content %>
   <%= form.submit "戻る", name: 'back' %>
 <% end %>

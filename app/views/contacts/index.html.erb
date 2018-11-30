@@ -25,19 +25,19 @@
 <p><%= notice %></p>
 <table>
   <tr>
-    <th>名前</th>
-    <th>Eメール</th>
+    <!-- <th>名前</th> -->
+    <!-- <th>Eメール</th> -->
     <th>コンテンツ</th>
   </tr>
 
 <% @contact.each do |contact| %>
   <tr>
-    <td><%= contact.name %></td>
-    <td><%= contact.email %></td>
+    <!-- <td><%= contact.name %></td> -->
+    <!-- <td><%= contact.email %></td> -->
     <td><%= contact.content %></td>
-    <td><%= link_to '詳細', contact_path(contact.id) %></td>
-    <td><%= link_to '編集', edit_contact_path(contact.id) %></td>
-    <td><%= link_to '削除', contact_path(contact.id), method: :delete %></td>
+    <td><%= link_to '詳細', contact_path(contact.id)  %></td>
+    <td><%= link_to '編集', edit_contact_path(contact.id),data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '削除', contact_path(contact.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
