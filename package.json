@@ -1,5 +1,8 @@
 {
   "name": "practice",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "3",
+    "jquery": "^3.3.1"
+  }
 }

@@ -1,3 +1,75 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+header {
+  width: 100%;
+  background-color: #666;
+  height: 45px;
+}
+
+header ul {
+  margin: 0 auto;
+  list-style: none;
+}
+
+header ul a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #ccc;
+}
+
+header li {
+  float: left;
+  width: auto;
+}
+
+header ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  color: #666;
+}
+
+#error_explanation ul {
+  list-style: none;
+}
+
+table {
+  margin: auto;
+}
+
+table td, th{
+  text-align: center;
+  padding: 5px;
+}
+
+button, input, optgroup, select, textarea {
+  margin: 5px;
+}
+
+footer {
+  width: 100%;
+  background-color:#666;
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  text-align: center;
+}
