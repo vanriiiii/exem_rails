@@ -25,25 +25,21 @@
 <p><%= notice %></p>
 <table>
   <tr>
-    <!-- <th>名前</th> -->
-    <!-- <th>Eメール</th> -->
     <th>コンテンツ</th>
   </tr>
 
-<% @contact.each do |contact| %>
+<% @tweet.each do |tweet| %>
   <tr>
-    <!-- <td><%= contact.name %></td> -->
-    <!-- <td><%= contact.email %></td> -->
-    <td><%= contact.content %></td>
-    <td><%= link_to '詳細', contact_path(contact.id)  %></td>
-    <td><%= link_to '編集', edit_contact_path(contact.id),data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除', contact_path(contact.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    <td><%= tweet.content %></td>
+    <td><%= link_to '詳細', tweet_path(tweet.id)  %></td>
+    <td><%= link_to '編集', edit_tweet_path(tweet.id),data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '削除', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br>
 
-<%= link_to '新規作成', new_contact_path %>
+<%= link_to '新規作成', new_tweet_path %>
 
  <!-- http://localhost:3000/ -->

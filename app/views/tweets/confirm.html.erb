@@ -1,0 +1,13 @@
+<h3>内容確認</h3>
+
+<%= form_with(model: @tweet, url: tweets_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>Content:<%= @tweet.content %></p>
+  <%= form.submit  "登録する" %>
+<% end %>
+
+<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
