@@ -28,18 +28,18 @@
     <th>コンテンツ</th>
   </tr>
 
-<% @tweet.each do |tweet| %>
+<% @owatter.each do |owatter| %>
   <tr>
-    <td><%= tweet.content %></td>
-    <td><%= link_to '詳細', tweet_path(tweet.id)  %></td>
-    <td><%= link_to '編集', edit_tweet_path(tweet.id),data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    <td><%= owatter.content %></td>
+    <td><%= link_to '詳細', owatter_path(owatter.id)  %></td>
+    <td><%= link_to '編集', edit_owatter_path(owatter.id),data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '削除', owatter_path(owatter.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br>
 
-<%= link_to '新規作成', new_tweet_path %>
+<%= link_to '新規作成', new_owatter_path %>
 
  <!-- http://localhost:3000/ -->
