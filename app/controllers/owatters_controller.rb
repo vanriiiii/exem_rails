@@ -1,5 +1,10 @@
 class OwattersController < ApplicationController
   before_action :set_owatter, only: [:show, :edit, :update, :destroy]
+
+  def top
+    render :layout => nil
+  end
+  
   def index
     @owatter = Owatter.all
   end

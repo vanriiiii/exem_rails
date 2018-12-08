@@ -20,26 +20,26 @@
  </div>
 </nav>
 
- <h1>ブログ一覧</h1>
+ <h1>Index</h1>
 
 <p><%= notice %></p>
 <table>
   <tr>
-    <th>コンテンツ</th>
+    <th>contents</th>
   </tr>
 
 <% @owatter.each do |owatter| %>
   <tr>
     <td><%= owatter.content %></td>
-    <td><%= link_to '詳細', owatter_path(owatter.id)  %></td>
-    <td><%= link_to '編集', edit_owatter_path(owatter.id),data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to '削除', owatter_path(owatter.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
+    <td><%= link_to 'Edit', edit_owatter_path(owatter.id),data: { confirm: 'Can I really edit it?' } %></td>
+    <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br>
 
-<%= link_to '新規作成', new_owatter_path %>
+<%= link_to 'Shout new!!', new_owatter_path, class: "btn outline btn-danger" %>
 
  <!-- http://localhost:3000/ -->

@@ -32,9 +32,18 @@ header ul:after {
   clear: both;
 }
 
-body {
-  color: #666;
+.topPage {
+  background-image: image-url("rip4.png");
+  background-size: cover;
+
 }
+
+.mainGuidance {
+  color: #ccc;
+  margin-top: 25%;
+
+}
+
 
 #error_explanation ul {
   list-style: none;
@@ -44,8 +53,7 @@ table {
   margin: auto;
 }
 
-table td, th{
-  text-align: center;
+table td, th {
   padding: 5px;
 }
 
@@ -53,10 +61,15 @@ button, input, optgroup, select, textarea {
   margin: 5px;
 }
 
+.button_wrapper {
+  text-align: center;
+  margin-top: auto;
+}
+
 footer {
   width: 100%;
   background-color:#666;
-  padding: 20px 0 10px 0;
+  padding: 10px 0 10px 0;
   color: #ccc;
   margin: auto;
   padding-bottom: 10px;
@@ -72,4 +85,5 @@ html {
 
 body {
   text-align: center;
+  color: #666;
 }

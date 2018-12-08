@@ -1,13 +1,13 @@
-<h3>内容確認</h3>
+<h3>Confirmation</h3>
 
 <%= form_with(model: @owatter, url: owatters_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
 
   <p>Content:<%= @owatter.content %></p>
-  <%= form.submit  "登録する" %>
+  <%= form.submit  "Register" %>
 <% end %>
 
 <%= form_with(model: @owatter, url: new_owatter_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
-  <%= form.submit "戻る", name: 'back' %>
+  <%= form.submit "Reset", name: 'back', class: "btn outline btn-danger" %>
 <% end %>

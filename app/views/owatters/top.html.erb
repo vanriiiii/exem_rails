@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <title>Owatter</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body class="topPage container-fluid">
+    <div class="mainGuidance">
+      <h2>Owatterとは</h2>
+      <h3>
+        過去のこと、終わったことなどを<br>
+        発信する一味違うWEBサービスです<br>
+        あの時言えなかったこと、感じたことを<br>
+        振り返り当時に浸りましょう。<br>
+        <br>
+      </h3>
+      <div class="button_wrapper">
+      <%= link_to "Welcome to Owatter", owatters_path, class: "btn outline btn-danger" %>
+      </div>
+    </div>
+    <footer>
+      <p>運営会社STILL ISLAND株式会社</p>
+      <p>© 2018-2020 Copyright STILL ISLAND Corp.</p>
+    </footer>
+  </body>
+</html>
