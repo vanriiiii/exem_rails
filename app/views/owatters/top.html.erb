@@ -7,20 +7,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8">
-    <title></title>
+    <title>Owatter</title>
   </head>
-  <body class="topPage container-fluid">
-    <div class="mainGuidance">
-      <h2>Owatterとは</h2>
-      <h3>
-        過去のこと、終わったことなどを<br>
-        発信する一味違うWEBサービスです<br>
-        あの時言えなかったこと、感じたことを<br>
-        振り返り当時に浸りましょう。<br>
-        <br>
-      </h3>
-      <div class="button_wrapper">
-      <%= link_to "Welcome to Owatter", owatters_path, class: "btn outline btn-danger" %>
+  <body class="topPage">
+    <div class="container">
+      <div class="row mainGuidance">
+        <h2 class="">Owatterとは</h2>
+        <h3>
+          過去のこと、終わったことなどを<br>
+          発信する一味違うWEBサービスです<br>
+          あの時言えなかったこと、感じたことを<br>
+          振り返り当時に浸りましょう。<br>
+          <br>
+        </h3>
+        <div class="button_wrapper">
+        <%= link_to "Welcome to Owatter", owatters_path, class: "btn outline btn-danger" %>
+        </div>
       </div>
     </div>
     <footer>

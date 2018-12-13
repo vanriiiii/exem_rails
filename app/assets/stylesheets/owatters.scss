@@ -32,38 +32,25 @@ header ul:after {
   clear: both;
 }
 
-.topPage {
-  background-image: image-url("rip4.png");
-  background-size: cover;
-
-}
-
-.mainGuidance {
-  color: #ccc;
-  margin-top: 25%;
-
-}
-
-
 #error_explanation ul {
   list-style: none;
 }
 
-table {
-  margin: auto;
+.table-responsive{
+  border: 0px solid;
 }
 
 table td, th {
   padding: 5px;
+  text-align: center;
 }
 
 button, input, optgroup, select, textarea {
   margin: 5px;
 }
 
-.button_wrapper {
-  text-align: center;
-  margin-top: auto;
+.btn-danger{
+  margin: 5px;
 }
 
 footer {
@@ -80,7 +67,7 @@ footer {
 
 html {
   position: relative;
-  min-height: 100%;
+  height: 150%;
 }
 
 body {

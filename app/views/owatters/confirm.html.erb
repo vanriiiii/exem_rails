@@ -4,10 +4,10 @@
   <%= form.hidden_field :content %>
 
   <p>Content:<%= @owatter.content %></p>
-  <%= form.submit  "Register" %>
+  <%= form.submit  "Register", class: "btn btn-danger" %>
 <% end %>
 
 <%= form_with(model: @owatter, url: new_owatter_path, local: true, method: 'get') do |form| %>
   <%= form.hidden_field :content %>
-  <%= form.submit "Reset", name: 'back', class: "btn outline btn-danger" %>
+  <%= form.submit "Reset", name: 'back', class: "btn btn-danger" %>
 <% end %>

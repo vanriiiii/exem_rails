@@ -4,7 +4,7 @@ class OwattersController < ApplicationController
   def top
     render :layout => nil
   end
-  
+
   def index
     @owatter = Owatter.all
   end
@@ -51,10 +51,14 @@ class OwattersController < ApplicationController
     render :new if @owatter.invalid?
   end
 
+  def grave
+    @owatter = Owatter.all
+  end
+
   private
 
   def owatter_params
-    params.require(:owatter).permit(:name, :email, :content)
+    params.require(:owatter).permit(:content)
   end
 
   def set_owatter

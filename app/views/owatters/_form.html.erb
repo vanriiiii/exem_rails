@@ -17,7 +17,7 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-<%= form.submit %>
+<%= form.submit "Update", class: "btn btn-danger" %>
 <% end %>
 
-<%= link_to "Back", owatters_path %>
+<%= link_to "Back", owatters_path, class: "btn btn-danger" %>
