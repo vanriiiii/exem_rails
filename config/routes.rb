@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'owatters#index'
+  root to: 'owatters#top'
   resources :owatters do
     collection do
       get :top
