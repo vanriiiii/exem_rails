@@ -1,22 +1,40 @@
 <div class="container">
   <h1>Index</h1>
   <p><%= notice %></p>
-  <div class="table-responsive">
-    <table>
-      <tr>
-        <th>[content]</th>
-      </tr>
-      <% @owatter.each do |owatter| %>
-      <tr>
-        <td><%= owatter.content %></td>
-        <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
-        <td><%= link_to 'Edit', edit_owatter_path(owatter.id),data: { confirm: 'Can I really edit it?' } %></td>
-        <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
-      </tr>
-      <% end %>
-    </table>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row_A">
+        <div class="tables">
+          <table class="table-responsive">
+            <tr>
+              <th>[content]</th>
+            </tr>
+            <% @owatter.each do |owatter| %>
+            <tr>
+              <td><%= owatter.content %></td>
+              <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
+              <td><%= link_to 'Edit', edit_owatter_path(owatter.id),data: { confirm: 'Can I really edit it?' } %></td>
+              <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row_B">
+        <div class="contents">
+          <ul class="content">
+            <li class="col-md-12">Hello</li>
+            <li class="col-md-12">Hello</li>
+            <li class="col-md-12">Hello</li>
+            <li class="col-md-12">Hello</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
   <%= link_to 'Shout new!!', new_owatter_path, class: "btn btn-danger" %>
 </div>
+<br>
 <!-- http://localhost:3000/ -->
