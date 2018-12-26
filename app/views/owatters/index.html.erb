@@ -12,9 +12,15 @@
             <% @owatter.each do |owatter| %>
             <tr>
               <td><%= owatter.content %></td>
+              <% if logged_in? %>
               <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
               <td><%= link_to 'Edit', edit_owatter_path(owatter.id),data: { confirm: 'Can I really edit it?' } %></td>
               <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
+              <% else %>
+              <td><%= link_to 'Detail', new_user_path  %></td>
+              <td><%= link_to 'Edit', new_user_path, data: { confirm: 'Can I really edit it?' } %></td>
+              <td><%= link_to 'Delete', new_user_path, data: { confirm: 'Can I really delete it?' } %></td>
+              <% end %>
             </tr>
             <% end %>
           </table>
@@ -34,7 +40,11 @@
       </div>
     </div>
   </div>
+  <% if logged_in? %>
   <%= link_to 'Shout new!!', new_owatter_path, class: "btn btn-danger" %>
+  <% else %>
+  <%= link_to 'Shout new!!', new_user_path, class: "btn btn-danger" %>
+  <% end %>
 </div>
 <br>
 <!-- http://localhost:3000/ -->

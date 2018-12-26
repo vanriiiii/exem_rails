@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root to: 'owatters#top'
+
+  resources :sessions, only:[:new, :create, :destroy]
+  
+  resources :users
+
   resources :owatters do
     collection do
       get :top
@@ -7,4 +12,5 @@ Rails.application.routes.draw do
       get :grave
     end
   end
+
 end
