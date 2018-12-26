@@ -1,6 +1,5 @@
 <div class="container">
   <h1>Index</h1>
-  <p><%= notice %></p>
   <div class="row">
     <div class="col-md-6">
       <div class="row_A">
@@ -18,8 +17,8 @@
               <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
               <% else %>
               <td><%= link_to 'Detail', new_user_path  %></td>
-              <td><%= link_to 'Edit', new_user_path, data: { confirm: 'Can I really edit it?' } %></td>
-              <td><%= link_to 'Delete', new_user_path, data: { confirm: 'Can I really delete it?' } %></td>
+              <td><%= link_to 'Edit', new_user_path%></td>
+              <td><%= link_to 'Delete', new_user_path%></td>
               <% end %>
             </tr>
             <% end %>
