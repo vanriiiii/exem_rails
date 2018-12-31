@@ -1,5 +1,6 @@
 class OwattersController < ApplicationController
-  before_action :set_owatter, only: [:show, :edit, :update, :destroy]
+  before_action :set_owatter, only: [:edit, :show, :update, :destroy]
+  before_action :user_exist, only: [:new, :edit, :show]
 
   def top
     render :layout => nil
@@ -65,5 +66,12 @@ class OwattersController < ApplicationController
     @owatter = Owatter.find(params[:id])
   end
 
+  def user_exist
+    if logged_in?
 
+    else
+      redirect_to new_user_path
+    end
+  end
 end
+  
