@@ -1,3 +1,21 @@
-<h1><%= @user.name %>のページ</h1>
-
-<p>メールアドレス: <%= @user.email %></p>
+<div class="container">
+  <h1><%= @user.name %>のページ</h1>
+    <p>メールアドレス: <%= @user.email %></p>
+    <h3><%= @user.name %>さんがお気に入りしたブログ</h3>
+    <div class="table-responsive">
+      <table class="tables">
+        <tr>
+          <th>[Name]</th>
+          <th>[Title]</th>
+          <th>[Content]</th>
+        </tr>
+        <% @user.favorite_owatters.each do |f| %>
+        <tr>
+          <td><%= f.user.name %></td>
+          <td><%= f.title %></td>
+          <td><%= f.content %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+</div>

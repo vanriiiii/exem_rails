@@ -3,24 +3,38 @@
   <div class="row">
     <div class="col-md-6">
       <div class="row_A">
-        <div class="tables">
-          <table class="table-responsive">
-            <tr>
-              <th>[content]</th>
-            </tr>
-            <% @owatter.each do |owatter| %>
-            <tr>
-              <td><%= owatter.content %></td>
-              <% if logged_in? %>
-              <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
-              <td><%= link_to 'Edit', edit_owatter_path(owatter.id),data: { confirm: 'Can I really edit it?' } %></td>
-              <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
-              <% else %>
-              <td><%= link_to 'Detail', new_user_path  %></td>
-              <td><%= link_to 'Edit', new_user_path%></td>
-              <td><%= link_to 'Delete', new_user_path%></td>
+        <div class="table-responsive">
+          <table class="tables">
+            <% if logged_in? %>
+              <tr>
+                <th>[title]</th>
+                <th>[content]</th>
+                <th>[shouter]</th>
+              </tr>
+              <% @owatter.each do |owatter| %>
+              <tr>
+                <td><%= owatter.title %></td>
+                <td><%= owatter.content %></td>
+                <td><%= owatter.user.name %></td>
+                <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
+                <td><%= link_to 'Edit', edit_owatter_path(owatter.id),data: { confirm: 'Can I really edit it?' } %></td>
+                <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
+              </tr>
               <% end %>
-            </tr>
+            <% else %>
+              <tr>
+                <th>[title]</th>
+                <th>[content]</th>
+              </tr>
+              <% @owatter.each do |owatter| %>
+              <tr>
+                <td><%= owatter.title %></td>
+                <td><%= owatter.content %></td>
+                <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
+                <td><%= link_to 'Edit', new_user_path%></td>
+                <td><%= link_to 'Delete', new_user_path%></td>
+              </tr>
+              <% end %>
             <% end %>
           </table>
         </div>
@@ -40,9 +54,9 @@
     </div>
   </div>
   <% if logged_in? %>
-  <%= link_to 'Shout new!!', new_owatter_path, class: "btn btn-danger" %>
+    <%= link_to 'Shout new!!', new_owatter_path, class: "btn btn-danger" %>
   <% else %>
-  <%= link_to 'Shout new!!', new_user_path, class: "btn btn-danger" %>
+    <%= link_to 'Shout new!!', new_user_path, class: "btn btn-danger" %>
   <% end %>
 </div>
 <br>

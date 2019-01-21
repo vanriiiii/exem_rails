@@ -1,9 +1,12 @@
 <h3>Confirmation</h3>
 
 <%= form_with(model: @owatter, url: owatters_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
 
+  <p>Title:<%= @owatter.title %></p>
   <p>Content:<%= @owatter.content %></p>
+
   <%= form.submit  "Register", class: "btn btn-danger" %>
 <% end %>
 

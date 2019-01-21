@@ -1,6 +1,8 @@
 class OwattersController < ApplicationController
   before_action :set_owatter, only: [:edit, :show, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   before_action :user_exist, only: [:new, :edit, :show]
+
 
   def top
     render :layout => nil
@@ -19,7 +21,7 @@ class OwattersController < ApplicationController
   end
 
   def create
-    @owatter = Owatter.new(owatter_params)
+    @owatter = current_user.owatters.build(owatter_params)
     if @owatter.save
       redirect_to owatters_path, notice:"ブログを新規作成しました!"
     else
@@ -28,7 +30,18 @@ class OwattersController < ApplicationController
     end
   end
 
+  def ensure_correct_user
+    @owatter = Owatter.find_by(id:params[:id])
+    @current_user = current_user
+    if @owatter.user_id != @current_user.id
+      flash[:notice] = "#{@owatter.user.name}の投稿した内容の変更権限は#{@current_user.name}にはありませんでした！"
+      redirect_to owatters_path
+    end
+  end
+
+
   def show
+    @favorite = current_user.favorites.find_by(owatter_id: @owatter.id)
   end
 
   def edit
@@ -48,7 +61,7 @@ class OwattersController < ApplicationController
   end
 
   def confirm
-    @owatter = Owatter.new(owatter_params)
+    @owatter = current_user.owatters.build(owatter_params)
     render :new if @owatter.invalid?
   end
 
@@ -59,7 +72,7 @@ class OwattersController < ApplicationController
   private
 
   def owatter_params
-    params.require(:owatter).permit(:content)
+    params.require(:owatter).permit(:title, :content, :user_id)
   end
 
   def set_owatter
@@ -73,5 +86,5 @@ class OwattersController < ApplicationController
       redirect_to new_user_path
     end
   end
+
 end
-  
