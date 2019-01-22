@@ -17,8 +17,10 @@
                 <td><%= owatter.content %></td>
                 <td><%= owatter.user.name %></td>
                 <td><%= link_to 'Detail', owatter_path(owatter.id)  %></td>
+                <% if owatter.user_id == current_user.id %>
                 <td><%= link_to 'Edit', edit_owatter_path(owatter.id),data: { confirm: 'Can I really edit it?' } %></td>
                 <td><%= link_to 'Delete', owatter_path(owatter.id), method: :delete, data: { confirm: 'Can I really delete it?' } %></td>
+                <% end %>
               </tr>
               <% end %>
             <% else %>
@@ -30,9 +32,6 @@
               <tr>
                 <td><%= owatter.title %></td>
                 <td><%= owatter.content %></td>
-                <td><%= link_to 'Detail', owatter_path(owatter.id)%></td>
-                <td><%= link_to 'Edit', new_user_path%></td>
-                <td><%= link_to 'Delete', new_user_path%></td>
               </tr>
               <% end %>
             <% end %>
