@@ -4,6 +4,7 @@ class OwattersController < ApplicationController
   before_action :user_exist, only: [:new, :edit, :show]
 
 
+
   def top
     render :layout => nil
   end
@@ -24,6 +25,7 @@ class OwattersController < ApplicationController
     @owatter = current_user.owatters.build(owatter_params)
     if @owatter.save
       redirect_to owatters_path, notice:"ブログを新規作成しました!"
+      OwatterMailer.owatter_mail(@owatter).deliver
     else
       render 'new'
       #参考ページ https://rails-study.net/validation/
@@ -34,7 +36,7 @@ class OwattersController < ApplicationController
     @owatter = Owatter.find_by(id:params[:id])
     @current_user = current_user
     if @owatter.user_id != @current_user.id
-      flash[:notice] = "#{@owatter.user.name}の投稿した内容の変更権限は#{@current_user.name}にはありませんでした！"
+      flash[:notice] = "#{@owatter.user.name}の投稿した内容の変更権限は#{@current_user.name}にはありません！"
       redirect_to owatters_path
     end
   end
